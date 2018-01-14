@@ -18,7 +18,7 @@ var (
 func main() {
 
   http.HandleFunc("/", stoichiometry)
-  http.ListenAndServe(":8080", nil)
+  http.ListenAndServe(GetPort(), nil)
 }
 
 /*type InputData struct {
@@ -108,4 +108,14 @@ func stoichiometry(w http.ResponseWriter, r *http.Request) {
   }
 
   page.Execute(w, output)
+}
+
+func GetPort() string {
+	var port = os.Getenv("PORT")
+ 	// Set a default port if there is nothing in the environment
+ 	if port == "" {
+ 		port = "4747"
+ 		fmt.Println("INFO: No PORT environment variable detected, defaulting to " + port)
+ 	}
+ 	return ":" + port
 }
