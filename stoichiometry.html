@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Stoichiometry</title>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+   <style>
+      body {
+        background-color: #1a161e;
+        font-family: 'Raleway', sans-serif;;
+      }
+      h1 {
+        color: #6a8192;
+        text-align: center;
+      }
+      h2 {
+        color: #6a8192;
+        text-align: center;
+      }
+      h3 {
+        color: #6a8192;
+        text-align: center;
+      }
+      li {
+        color: #6a8192;
+        text-align: center;
+      }
+      form {
+        color: #6a8192;
+        text-align: center;
+      }
+  </style>
+ </head>
+
+ <body>
+   {{if .Success}}
+   	<h2><u>Results</u></h2>
+    <h3>A and B are outputted as 1 and 2 respectively</h3>
+    {{range .Stoics}}
+        <li>{{.Message}} {{.Ans}}</li>
+    {{end}}
+   {{else}}
+   	<h2><u>Variables</u></h2>
+    <h2>Formatted as (NUM)A + (NUM)B -> (NUM)C + (NUM)D </h2>
+    <h3>(Input zero if not availible)</h3>
+   	<form method="POST">
+   		<label>Molar Mass of A:</label><br />
+   		<input type="number" name="MMA"><br />
+      <label>Molar Mass of B:</label><br />
+   		<input type="number" name="MMB"><br />
+      <label>Molar Mass of C:</label><br />
+   		<input type="number" name="MMC"><br />
+      <label>Molar Mass of D:</label><br />
+   		<input type="number" name="MMD"><br />
+      <label>NUM of A:</label><br />
+   		<input type="number" name="NA"><br />
+      <label>NUM of B:</label><br />
+   		<input type="number" name="NB"><br />
+      <label>NUM of C:</label><br />
+   		<input type="number" name="NC"><br />
+      <label>NUM of D:</label><br />
+   		<input type="number" name="ND"><br />
+      <label>Grams of A:</label><br />
+   		<input type="number" name="GA"><br />
+      <label>Grams of B:</label><br />
+   		<input type="number" name="GB"><br />
+   		<input type="submit">
+   	</form>
+   {{end}}
+ </body>
+</html>
