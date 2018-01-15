@@ -6,6 +6,7 @@ import (
   "strconv"
   "fmt"
   "os"
+  "log"
 )
 
 var (
@@ -67,18 +68,55 @@ func stoichiometry(w http.ResponseWriter, r *http.Request) {
 	} */
 
   MMA, err := strconv.ParseFloat(r.FormValue("MMA"), 64)
+  if err != nil {
+    log.Fatal(err)
+  }
+  
   MMB, err := strconv.ParseFloat(r.FormValue("MMB"), 64)
+  if err != nil {
+    log.Fatal(err)
+  }
+
   MMC, err := strconv.ParseFloat(r.FormValue("MMC"), 64)
+  if err != nil {
+    log.Fatal(err)
+  }
+
   MMD, err := strconv.ParseFloat(r.FormValue("MMD"), 64)
+  if err != nil {
+    log.Fatal(err)
+  }
+
   NA, err := strconv.ParseFloat(r.FormValue("NA"), 64)
+  if err != nil {
+    log.Fatal(err)
+  }
+
   NB, err := strconv.ParseFloat(r.FormValue("NB"), 64)
+  if err != nil {
+    log.Fatal(err)
+  }
+
   NC, err := strconv.ParseFloat(r.FormValue("NC"), 64)
+  if err != nil {
+    log.Fatal(err)
+  }
+
   ND, err := strconv.ParseFloat(r.FormValue("ND"), 64)
+  if err != nil {
+    log.Fatal(err)
+  }
+
   GA, err := strconv.ParseFloat(r.FormValue("GA"), 64)
+  if err != nil {
+    log.Fatal(err)
+  }
+
   GB, err := strconv.ParseFloat(r.FormValue("GB"), 64)
   if err != nil {
-    return
+    log.Fatal(err)
   }
+
   Test1 = (((GA / MMA) * (NC / NA)) * MMC)
   Test2 = (((GB / MMB) * (NC / NB)) * MMC)
   if Test1 < Test2 {
