@@ -71,7 +71,7 @@ func stoichiometry(w http.ResponseWriter, r *http.Request) {
   if err != nil {
     log.Fatal(err)
   }
-  
+
   MMB, err := strconv.ParseFloat(r.FormValue("MMB"), 64)
   if err != nil {
     log.Fatal(err)
@@ -141,7 +141,7 @@ func stoichiometry(w http.ResponseWriter, r *http.Request) {
     Stoics: []Stoichiometry{
 		  {Message: "Grams of C Produced", Ans: GC},
 			{Message: "Grams of D Produced", Ans: GD},
-			{Message: "Limiting Reagant", Ans: LR},
+			{Message: "Limiting Reagent", Ans: LR},
       {Message: "Excess Reagent", Ans: ER},
 		},
     Success: true,

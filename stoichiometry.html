@@ -42,7 +42,7 @@
  <body>
    {{if .Success}}
    	<h2><u>Results</u></h2>
-    <h3>A and B are outputted as 1 and 2 respectively</h3>
+    <h3>A and B are outputted as 1 and 2 respectively. 0 means that there is no limiting/excess reagent</h3>
     {{range .Stoics}}
         <li>{{.Message}} {{.Ans}}</li>
     {{end}}
@@ -52,13 +52,13 @@
     <h3>(Input zero if not availible)</h3>
    	<form method="POST">
    		<label>Molar Mass of A:</label><br />
-   		<input type="number" name="MMA"><br />
+   		<input type="number" step="0.001" name="MMA"><br />
       <label>Molar Mass of B:</label><br />
-   		<input type="number" name="MMB"><br />
+   		<input type="number" step="0.001" name="MMB"><br />
       <label>Molar Mass of C:</label><br />
-   		<input type="number" name="MMC"><br />
+   		<input type="number" step="0.001" name="MMC"><br />
       <label>Molar Mass of D:</label><br />
-   		<input type="number" name="MMD"><br />
+   		<input type="number" step="0.001" name="MMD"><br />
       <label>NUM of A:</label><br />
    		<input type="number" name="NA"><br />
       <label>NUM of B:</label><br />
@@ -68,9 +68,9 @@
       <label>NUM of D:</label><br />
    		<input type="number" name="ND"><br />
       <label>Grams of A:</label><br />
-   		<input type="number" name="GA"><br />
+   		<input type="number" step="0.001" name="GA"><br />
       <label>Grams of B:</label><br />
-   		<input type="number" name="GB"><br />
+   		<input type="number" step="0.001" name="GB"><br />
    		<input type="submit">
    	</form>
    {{end}}
