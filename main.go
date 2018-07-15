@@ -24,19 +24,6 @@ func main() {
 	http.ListenAndServe(GetPort(), nil)
 }
 
-/*type InputData struct {
-	MMA float64
-	MMB float64
-	MMC float64
-  MMD float64
-  NA float64
-  NB float64
-  NC float64
-  ND float64
-  GA float64
-  GB float64
-} */
-
 type Stoichiometry struct {
 	Message string
 	Ans     float64
@@ -53,19 +40,8 @@ func stoichiometry(w http.ResponseWriter, r *http.Request) {
 		page.Execute(w, nil)
 		return
 	}
+
 	r.ParseForm()
-	/*input := InputData{
-	    MMA:   strconv.ParseFloat(r.FormValue("MMA"), 64),
-	  	MMB:   r.FormValue("MMB"),
-	    MMC:   r.FormValue("MMC"),
-	    MMD:   r.FormValue("MMD"),
-	    NA:   r.FormValue("NA"),
-	    NB:   r.FormValue("NB"),
-	    NC:   r.FormValue("NC"),
-	    ND:   r.FormValue("ND"),
-	    GA:   r.FormValue("GA"),
-	    GB:   r.FormValue("GB"),
-		} */
 
 	MMA, err := strconv.ParseFloat(r.FormValue("MMA"), 64)
 	if err != nil {
